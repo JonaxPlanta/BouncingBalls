@@ -23,7 +23,7 @@ https://nodejs.org/en/download/package-manager
 
 5. Click with the *Right Mouse Button* on **Index.html** file 
 
-6. Select the *Open with* optin and select your *browser*
+6. Select the *Open with* option and select your *browser*
 
 7. Wait for the site to load completelly and test it
 
