@@ -107,7 +107,7 @@ const balls = [];
 
 
 // Generates new balls while the array "balls" doesn't have 25 balls...
-while (balls.length < 25) {
+while (balls.length < 40) {
     // randomizing ball size:
     const ballSize = randomizer(10, 20);
     // generates balls:
@@ -131,7 +131,7 @@ while (balls.length < 25) {
 // Function to starts the code
 function loopCode() {
     // a fill color with 0.25 opacity
-    canvaContext.fillStyle = "rgba(0, 0, 0, 0.1)";
+    canvaContext.fillStyle = "rgba(0, 0, 0, 0.15)";
     // draw a black retangle to be the background
     canvaContext.fillRect(0, 0, width, height);
 
