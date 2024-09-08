@@ -32,5 +32,3 @@ https://nodejs.org/en/download/package-manager
 ```
 https://jonaxplanta.github.io/BouncingBalls/
 ```
-
-# AAAAAAAAA
