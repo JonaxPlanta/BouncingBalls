@@ -1,8 +1,8 @@
 // Setting up canvas...
 // constant for canva:
-const canvas = document.querySelector("canvas");
+const canvas = document.querySelector('canvas');
 // canva drawing context, in this case two-dimensional:
-const canvaContext = canvas.getContext("2d");
+const canvaContext = canvas.getContext('2d');
 
 // assigning the canvas size:
 const width = canvas.width = window.innerWidth;
@@ -12,7 +12,7 @@ const height = canvas.height = window.innerHeight;
 // Function to gerenate random numbers:
 function randomizer(minimum, maximum) {
     // calculation to obtain a number from minimum and maximum params:
-    return Math.floor(Math.random() * (maximum - minimum + 1) + minimum);
+    return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 }
 
 
@@ -90,7 +90,7 @@ class Ball {
                 // calculating the distance in the plane Y:
                 const distanceY = this.positionY - ball.positionY;
                 // calculating the cartesian distance:
-                const distance = Math.sqrt((distanceX * distanceX) - (distanceY * distanceY));
+                const distance = Math.sqrt((distanceX * distanceX) + (distanceY * distanceY));
             
                 // in collision, the balls change to a random color.
                 if (distance < this.size + ball.size) {
