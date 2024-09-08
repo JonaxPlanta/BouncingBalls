@@ -13,10 +13,22 @@ https://nodejs.org/en/download/package-manager
 ---
 
 ### How to run
-1. Download <Index.html>
+1. Download **Index.html**, **Style.css** and **Script.js**
 
+2. Create a folder called **bouncing-balls**
 
-### Acess it in
+3. Move **Index.html**, **Style.css** and **Script.js** files to **bouncing-balls** folder
+
+4. Open the **bouncing-balls** folder
+
+5. Click with the *Right Mouse Button* on **Index.html** file 
+
+6. Select the *Open with* optin and select your *browser*
+
+7. Wait for the site to load completelly and test it
+
+#### or acess it in
+
 ```
 https://jonaxplanta.github.io/BouncingBalls/
 ```
