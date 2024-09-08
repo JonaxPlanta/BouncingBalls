@@ -1,6 +1,6 @@
 
 ### Bouncing Balls WebSite 
-This is a bouncing balls website. It uses HTML and Javascript Canvas to generate some moving balls.
+This is a bouncing balls website. It uses HTML, Javascript and Canvas API to generate a Website with bouncing balls animation.
 
 ---
 
