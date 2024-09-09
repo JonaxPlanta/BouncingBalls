@@ -23,11 +23,11 @@ https://nodejs.org/en/download/package-manager
 
 5. Click with the *Right Mouse Button* on **Index.html** file 
 
-6. Select the *Open with* option and select your *browser*
+6. Select the *Open with* option and select your *Browser*
 
 7. Wait for the site to load completelly and test it
 
-#### or acess it in
+#### or acess it with the following URL:
 
 ```
 https://jonaxplanta.github.io/BouncingBalls/
