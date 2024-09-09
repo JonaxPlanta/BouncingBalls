@@ -1,5 +1,6 @@
 html, body {
     margin: 0;
+    overflow: hidden;
 }
 
 html {
@@ -8,7 +9,6 @@ html {
 }
 
 body {
-    overflow: hidden;
     height: inherit;
 }
 
