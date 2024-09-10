@@ -4,10 +4,6 @@ const canvas = document.querySelector('canvas');
 // canva drawing context, in this case two-dimensional:
 const canvaContext = canvas.getContext('2d');
 
-// assigning the canvas size:
-const width = canvas.width = window.innerWidth;
-const height = canvas.height = window.innerHeight;
-
 
 // Function to adjust the canvas size
 function adjustCanvas() {
@@ -70,7 +66,7 @@ class Ball {
     update() {
         // building a "barrier" to keep the balls from leaving the screen...
         // when the ball touch the maximum screen width size, it slows dowm:
-        if ((this.positionX + this.size) >= (width)) {
+        if ((this.positionX + this.size) >= (canvas.width)) {
             this.speedX = -(Math.abs(this.speedX));
         }
         // when the ball touch the minimum screen width size, it speeds up:
@@ -78,7 +74,7 @@ class Ball {
             this.speedX = Math.abs(this.speedX);
         }
         // when the ball touch the maximum screen height size, it slows dowm:
-        if ((this.positionY + this.size) >= (height)) {
+        if ((this.positionY + this.size) >= (canvas.height)) {
             this.speedY = -(Math.abs(this.speedY));
         }
         // when the ball touch the minimum screen height size, it speeds up:
@@ -127,8 +123,8 @@ while (balls.length < 40) {
     // generates balls:
     const ball = new Ball (
         // ball position always drawn at least one ball width away from the edge of the canvas, to avoid drawing errors
-        randomizer(0 + ballSize, width - ballSize),
-        randomizer(0 + ballSize, height - ballSize),
+        randomizer(0 + ballSize, canvas.width - ballSize),
+        randomizer(0 + ballSize, canvas.height - ballSize),
         // setting balls speed (you can change for another effect): 
         randomizer(-6, 6),
         randomizer(-6, 6),
@@ -147,7 +143,7 @@ function loopCode() {
     // a fill color with a opacity (you can change for another effect):
     canvaContext.fillStyle = "rgba(0, 0, 0, 0.15)";
     // draw a black retangle to be the background
-    canvaContext.fillRect(0, 0, width, height);
+    canvaContext.fillRect(0, 0, canvas.width, canvas.height);
 
     // executing the balls drawing
     for (const ball of balls) {
