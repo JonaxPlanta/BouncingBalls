@@ -9,7 +9,16 @@ const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
 
-// Function to gerenate random numbers:
+function adjustCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener("resize", adjustCanvas);
+adjustCanvas();
+
+
+// Function to gerenate a random number:
 function randomizer(minimum, maximum) {
     // calculation to obtain a number from minimum and maximum params:
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
