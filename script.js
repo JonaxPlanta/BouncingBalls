@@ -9,12 +9,15 @@ const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
 
+// Function to adjust the canvas size
 function adjustCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
 
+// evoking adjustyPage when the page window is resized
 window.addEventListener("resize", adjustCanvas);
+// resize the canvas in its loading 
 adjustCanvas();
 
 
