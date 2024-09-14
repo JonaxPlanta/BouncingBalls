@@ -1,13 +1,13 @@
 // Setting up canvas...
 const canvas = document.querySelector('canvas'); // Constant for canva
-const canvaContext = canvas.getContext('2d'); // Canva drawing context
+const canvasContext = canvas.getContext('2d'); // Canva drawing context
 // in this case two-dimensional ('2d' of 2-dimensional)
 
 
 // Function to adjust the canvas size
 function adjustCanvas() {
-    canvas.width = window.innerWidth; // canvas width receive window width value
-    canvas.height = window.innerHeight; // canvas height receive window height value
+    canvas.width = window.innerWidth; // Canvas width receive window width value
+    canvas.height = window.innerHeight; // Canvas height receive window height value
 }
 
 // Evoking adjustyPage when the page window is resized
@@ -16,9 +16,9 @@ window.addEventListener("resize", adjustCanvas);
 adjustCanvas();
 
 
-// Function to gerenate a random number:
+// Function to gerenate a random number
 function randomizer(minimum, maximum) {
-    // calculation to obtain a number from minimum and maximum params:
+    // alculation to obtain a number from minimum and maximum parameters
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 }
 
@@ -44,11 +44,11 @@ class Ball {
 
     // Drawing method
     draw() {
-        canvaContext.beginPath(); // Creates a path
-        canvaContext.fillStyle = this.color; // Color for the filling based in the choosen color to ball
-        canvaContext.arc(this.positionX, this.positionY, this.size, 0, 2 * Math.PI); // Draws a ball based 
+        canvasContext.beginPath(); // Creates a path
+        canvasContext.fillStyle = this.color; // Color for the filling based in the choosen color to ball
+        canvasContext.arc(this.positionX, this.positionY, this.size, 0, 2 * Math.PI); // Draws a ball based 
         // in its X and Y position and size, 0 initial angle and complete circunference (PI times 2)
-        canvaContext.fill(); // Fills the ball with the fill Style color
+        canvasContext.fill(); // Fills the ball with the fill Style color
     }
 
     // Updating ball position method
@@ -127,8 +127,8 @@ while (balls.length < 40) { // (You may change for another amount of balls)
 // Function to starts the code
 function loopCode() {
     // A fill color with a opacity:
-    canvaContext.fillStyle = "rgba(0, 0, 0, 0.15)"; // (You may change the alpha for another trail effect)
-    canvaContext.fillRect(0, 0, canvas.width, canvas.height); // Draws a black retangle to be the background
+    canvasContext.fillStyle = "rgba(0, 0, 0, 0.15)"; // (You may change the alpha for another trail effect)
+    canvasContext.fillRect(0, 0, canvas.width, canvas.height); // Draws a black retangle to be the background
 
     // Executing the balls drawing
     for (const ball of balls) {
