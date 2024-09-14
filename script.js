@@ -1,14 +1,13 @@
 // Setting up canvas...
-// Constant for canva:
-const canvas = document.querySelector('canvas');
-// Canva drawing context, in this case two-dimensional:
-const canvaContext = canvas.getContext('2d');
+const canvas = document.querySelector('canvas'); // Constant for canva
+const canvaContext = canvas.getContext('2d'); // Canva drawing context
+// in this case two-dimensional ('2d' of 2-dimensional)
 
 
 // Function to adjust the canvas size
 function adjustCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth; // canvas width receive window width value
+    canvas.height = window.innerHeight; // canvas height receive window height value
 }
 
 // Evoking adjustyPage when the page window is resized
@@ -34,56 +33,38 @@ function randomColorsRGB() {
 // Class to build up our balls:
 class Ball {
     // Assigning attributes...
-    constructor (positionX, positionY, speedX, speedY, color, size) {
-        // Position in plane X:
-        this.positionX = positionX;
-        // Position in plane Y:
-        this.positionY = positionY;
-        // Speed based in plane X:
-        this.speedX = speedX;
-        // Speed based in plane Y:
-        this.speedY = speedY;
-        // Ball choosen color:
-        this.color = color;
-        // Ball choosen size:
-        this.size = size;
+    constructor (positionX, positionY, speedX, speedY, color, size) { 
+        this.positionX = positionX; // Position in plane X
+        this.positionY = positionY; // Position in plane Y
+        this.speedX = speedX; // Speed based in plane X
+        this.speedY = speedY; // Speed based in plane Y
+        this.color = color; // Ball choosen color
+        this.size = size; // Ball choosen size
     }
 
     // Drawing method
     draw() {
-        // Creates a path:
-        canvaContext.beginPath();
-        // Color for the filling based in the choosen color to ball:
-        canvaContext.fillStyle = this.color;
-        // Draws a ball based in its X and Y position and size. 0 initial angle
-        // and complete circunference (2 x 3.14 x size):
-        canvaContext.arc(this.positionX, this.positionY, this.size, 0, 2 * Math.PI);
-        // Fills the ball with the fill Style color:
-        canvaContext.fill();
+        canvaContext.beginPath(); // Creates a path
+        canvaContext.fillStyle = this.color; // Color for the filling based in the choosen color to ball
+        canvaContext.arc(this.positionX, this.positionY, this.size, 0, 2 * Math.PI); // Draws a ball based 
+        // in its X and Y position and size, 0 initial angle and complete circunference (PI times 2)
+        canvaContext.fill(); // Fills the ball with the fill Style color
     }
 
     // Updating ball position method
     update() {
-        // Building a "barrier" to keep the balls from leaving the screen...
-        // When the ball touch the maximum screen 
-        // width size, it slows dowm:
-        if ((this.positionX + this.size) >= (canvas.width)) {
-            this.speedX = -(Math.abs(this.speedX));
+        // Building a "barrier" to keep the balls from leaving the screen
+        if ((this.positionX + this.size) >= (canvas.width)) { // When the ball touch the maximum screen
+            this.speedX = -(Math.abs(this.speedX)); // width size, it slows dowm
         }
-        // When the ball touch the minimum screen 
-        // width size, it speeds up:
-        if ((this.positionX + this.size) <= 0) {
-            this.speedX = Math.abs(this.speedX);
+        if ((this.positionX + this.size) <= 0) { // When the ball touch the minimum screen
+            this.speedX = Math.abs(this.speedX); // width size, it speeds up
         }
-        // When the ball touch the maximum screen 
-        // height size, it slows dowm:
-        if ((this.positionY + this.size) >= (canvas.height)) {
-            this.speedY = -(Math.abs(this.speedY));
-        }
-        // When the ball touch the minimum screen 
-        // height size, it speeds up:
-        if ((this.positionY + this.size) <= 0) {
-            this.speedY = Math.abs(this.speedY);
+        if ((this.positionY + this.size) >= (canvas.height)) { // When the ball touch the maximum screen
+            this.speedY = -(Math.abs(this.speedY)); // height size, it slows dowm
+        } 
+        if ((this.positionY + this.size) <= 0) { // When the ball touch the minimum screen
+            this.speedY = Math.abs(this.speedY); // height size, it speeds up
         }
 
         // Select the next position based in acceleration calculation:
@@ -93,23 +74,22 @@ class Ball {
 
     // Detecting colision mothod
     collisionDetector() {
-        // Verifying all of the existing balls:
+        // Verifying all of the existing balls
         for (const ball of balls) {
-            // This if exists to doesn't occour to calculate
-            // the distance between a ball and itself.
+            // This "if" exists to doesn't occour to calculate
+            // the distance between a ball and itself
             if (!(this === ball)) {
-                // Calculating the distance in the plane X:
+                // Calculating the distance in the plane X
                 const distanceX = this.positionX - ball.positionX;
-                // Calculating the distance in the plane Y:
+                // Calculating the distance in the plane Y
                 const distanceY = this.positionY - ball.positionY;
-                // Calculating the cartesian distance:
+                // Calculating the cartesian distance
                 const distance = Math.sqrt((distanceX * distanceX) + (distanceY * distanceY));
             
-                // In collision, the balls change to a random color.
-                // The distance must be the sum between the two balls 
-                // size and this value divided by 3:
-                if (distance < (ball.size + ball.size / 3)) {
-                    ball.color = this.color = randomColorsRGB();
+                if (distance < (ball.size + ball.size / 3)) { // The distance must be 
+                    // the sum between the two balls size and this value divided by 3
+                    ball.color = this.color = randomColorsRGB(); // In collision, the balls changes
+                    // its color to a random color
                 };
             };
         };
@@ -117,25 +97,23 @@ class Ball {
 };
 
 
-// Array with the balls:
-const balls = [];
+const balls = []; // Array with the balls
 
 
 // Generates new balls while the array "balls" 
-// doesn't have a limited number of balls
-// (You may change for another effect):
-while (balls.length < 40) {
-    // Randomizing ball size (you can change for another effect):
-    const ballSize = randomizer(10, 20);
-    // Generates balls:
+// doesn't have a limited number of balls:
+while (balls.length < 40) { // (You may change for another amount of balls)
+    // Randomizing ball size
+    const ballSize = randomizer(10, 20); // (You may change for another ball size)
+    // Generates balls
     const ball = new Ball (
         // Ball position always drawn at least one ball width away 
         // from the edge of the canvas, to avoid drawing errors
         randomizer(0 + ballSize, canvas.width - ballSize),
         randomizer(0 + ballSize, canvas.height - ballSize),
-        // Setting balls speed (you can change for another effect): 
-        randomizer(-6, 6),
-        randomizer(-6, 6),
+        // Setting balls speed: 
+        randomizer(-6, 6), // (You may change for another speed in X plane)
+        randomizer(-6, 6), // (You may change for another speed in Y plane)
         // Setting a random ball color
         randomColorsRGB(),
         // Using the constant with a random value to ball
@@ -148,21 +126,20 @@ while (balls.length < 40) {
 
 // Function to starts the code
 function loopCode() {
-    // A fill color with a opacity (You may change for another effect):
-    canvaContext.fillStyle = "rgba(0, 0, 0, 0.15)";
-    // Draw a black retangle to be the background
-    canvaContext.fillRect(0, 0, canvas.width, canvas.height);
+    // A fill color with a opacity:
+    canvaContext.fillStyle = "rgba(0, 0, 0, 0.15)"; // (You may change the alpha for another trail effect)
+    canvaContext.fillRect(0, 0, canvas.width, canvas.height); // Draws a black retangle to be the background
 
     // Executing the balls drawing
     for (const ball of balls) {
-        ball.draw();
-        ball.update();
-        ball.collisionDetector();
+        ball.draw(); // Draws the ball with draw()
+        ball.update(); // Updates the ball position with update()
+        ball.collisionDetector(); // Detects if there
+        // is a ball collision with collisionDetector()
     }
 
-    // Requesting to repeat the loopCode function, creating a animation
-    requestAnimationFrame(loopCode);
+    // Requesting to repeat the loopCode function
+    requestAnimationFrame(loopCode); // This loop creates a animation
 }
 
-// Starts code
-loopCode();
+loopCode(); // Starts code
