@@ -7,7 +7,7 @@ This is a bouncing balls website. It uses HTML, Javascript and Canvas API to gen
 ### Requires
 ###### Node.js
 ```
-https://nodejs.org/en/download/package-manager
+https://nodejs.org/en/download/package-manager/
 ```
 
 ---
