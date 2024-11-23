@@ -69,7 +69,7 @@ This is **dependences** to run the program:
 
 7. Wait until the site load completelly
 
-##### OR 
+    ##### OR 
 4. Open the **bouncing-balls** folder in **File Explorer**
 
 5. Click with the *Right Mouse Button* on *Index.html* file 
@@ -78,9 +78,9 @@ This is **dependences** to run the program:
 
 7. Wait until the site load completelly
 
-#### OR Acess it with the following URL:
+    #### OR Acess it with the following URL:
 
-```
-https://jonaxplanta.github.io/BouncingBalls/
-```
+    ```
+    https://jonaxplanta.github.io/BouncingBalls/
+    ```
 ⠀
