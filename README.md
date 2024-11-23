@@ -60,9 +60,9 @@ This is **dependences** to run the program:
     cd <folder-path>
     ```
 
-5. Copy the *<folder-path>* and paste in browser
+5. Copy the *Index.html* path and paste in browser
     ```
-    file:\\\<folder-path>
+    file:\\\<file-path>
     ```
 
     - PS.: Remove the Quotation marks from *<file-path>*
