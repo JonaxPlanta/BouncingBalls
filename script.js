@@ -18,7 +18,7 @@ adjustCanvas();
 
 // Function to gerenate a random number
 function randomizer(minimum, maximum) {
-    // alculation to obtain a number from minimum and maximum parameters
+    // calculating to obtain a number beyond minimum and maximum parameters
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 }
 
